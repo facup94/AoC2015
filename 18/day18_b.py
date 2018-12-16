@@ -4,6 +4,10 @@ with open('input.txt', 'r') as input_file:
   for line in input_file:
     current_grid.append([x for x in line.strip()])
 
+current_grid[0][0] = '#'
+current_grid[0][99] = '#'
+current_grid[99][0] = '#'
+current_grid[99][99] = '#'
 
 for i in range(1, 101):
   next_grid = []
@@ -34,6 +38,11 @@ for i in range(1, 101):
     next_grid.append(next_grid_row)
 
   current_grid = next_grid
+
+  current_grid[0][0] = '#'
+  current_grid[0][99] = '#'
+  current_grid[99][0] = '#'
+  current_grid[99][99] = '#'
 
 lights_on = 0
 for row in current_grid:
